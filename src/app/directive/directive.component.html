@@ -1,0 +1,83 @@
+<!-- Structural Directive -->
+<!-- ngFor Directive -->
+
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{title}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let morning of morningSchedule;">
+                        <td>{{morning.period}}</td>
+                        <td>{{morning.startTime}}</td>
+                        <td>{{morning.endTime}}</td>
+                        <td>{{morning.Monday}}</td>
+                        <td>{{morning.Tuesday}}</td>
+                        <td>{{morning.Wednesday}}</td>
+                        <td>{{morning.Thursday}}</td>
+                        <td>{{morning.Friday}}</td>
+                        <td>{{morning.Saturday}}</td>
+                        <td>{{morning.Sunday}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ngSwitch Directive -->
+
+<div>
+    <div style="text-align: left;">
+        Choose the period you want to see
+        <select [(ngModel)]="num">
+            <option *ngFor="let morning of morningSchedule;" [value]="morning.period">{{morning.period}}</option>
+        </select>
+
+        <div [ngSwitch]="num">
+            <p *ngSwitchCase="'1'">One is Selected</p>
+            <p *ngSwitchCase="'2'">Two is Selected</p>
+            <p *ngSwitchCase="'3'">Three is Selected</p>
+            <p *ngSwitchCase="'4'">Four is Selected</p>
+            <p *ngSwitchCase="'5'">Five is Selected</p>
+        </div>
+    </div>
+
+
+    <!-- ngIf Direction -->
+
+    <div>
+        Show <input type="checkbox" [(ngModel)]="showMe" />
+        <!-- ngIf Else & Hidden -->
+        <p *ngIf="showMe; else elseBlock1">
+            <input disabled type="text" placeholder="Show is checked !">
+        </p>
+        <ng-template #elseBlock1>
+            <br>
+            <input disabled type="text" placeholder="Show is unchecked !">
+        </ng-template>
+        <p [hidden]="showMe"></p>
+
+        <!-- ngIf then Else -->
+        <p *ngIf="showMe; then thenBlock2 else elseBlock2"></p>
+        <ng-template #thenBlock2></ng-template>
+        <ng-template #elseBlock2></ng-template>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!-- One Way Binding -->
+<!-- Interpolation Binding -->
+
+<h2 style="text-align: center;">{{greetUser()}}</h2>
+
+<!-- Property Binding -->
+<div style="text-align: center;">
+    <img [src]="itemImageUrl">
+
+    <!-- Event Binding -->
+
+    <div style="text-align: left;">
+        <button (click)="onClick()">Click Me</button>
+        You clicked me: {{clickCount}}
+    </div>
+
+
+    <!-- Attribute Binding -->
+
+    <!-- Template Reference Variable -->
+    <!-- Two Way Binding -->
+
+    <div style="text-align: right;">
+        <input #inputName type="text" [value]="name1" (input)="name1=$any($event.target).value"
+            placeholder="Type your name here">
+
+        <!-- Class Binding -->
+
+        <button [className]="successClass" (click)="logMessage(inputName.value)">Submit</button>
+
+        <!-- Style Binding -->
+        <!-- Two Way Binding -->
+
+        <button [style.color]="getColor()" (click)="clearName()">Clear</button>
+    </div>
+
+</div>
+<hr>
