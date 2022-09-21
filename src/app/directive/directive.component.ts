@@ -16,8 +16,6 @@ export class DirectiveComponent implements OnInit {
   title: string = "Morning Schedule";
 
   num: number = 0;
-
-  showMe: boolean | undefined;
   
   morningSchedule: MorningSchedule[] = [
     {
@@ -83,7 +81,6 @@ export class DirectiveComponent implements OnInit {
   ]
 
 }
-
 
 class MorningSchedule {
   period: string | undefined;
