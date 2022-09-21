@@ -1,35 +1,18 @@
-import { Component, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-directive',
-  templateUrl: './directive.component.html',
-  styleUrls: ['./directive.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-export class DirectiveComponent implements OnInit, OnChanges {
+export class TableComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(_changes: any): void {
-
-    console.log('ngOnChanges', _changes.target.value);
-  
-    this.afternoon = !this.afternoon;
-  
-    console.log('ngOnChanges', this.afternoon);
-  
-  }
-
-  num: number = 0;
-
-  showMe: boolean | undefined;
-
-  afternoon: boolean | undefined;
-  
-  morningSchedule: MorningSchedule[] = [
+  schedule: Schedule[] = [
     {
     period: '1',
     startTime: '07:00',
@@ -89,10 +72,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Friday: 'Geography',
       Saturday: 'Self-Learning',
       Sunday: 'Self-Learning'
-    }
-  ]
-
-  afternoonSchedule: AfternoonSchedule[] = [
+    },
     {
     period: '6',
     startTime: '13:00',
@@ -156,7 +136,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
   ]
 }
 
-class MorningSchedule {
+class Schedule {
   period: string | undefined;
   startTime: string | undefined;
   endTime: string | undefined;
@@ -167,7 +147,4 @@ class MorningSchedule {
   Friday: string | undefined;
   Saturday: string | undefined;
   Sunday: string | undefined;
-}
-
-class AfternoonSchedule extends MorningSchedule {
 }

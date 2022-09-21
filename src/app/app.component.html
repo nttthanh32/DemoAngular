@@ -1,4 +1,14 @@
 <div style="text-align: center;">
     <h1> Schedule</h1>
 </div>
-<router-outlet></router-outlet>
+
+<!-- ngIf Direction -->
+<!-- ngIf Else & Hidden -->
+Show More <input type="checkbox" [(ngModel)]="showMe" routerLink="./binding">
+<p *ngIf="showMe; else elseBlock">
+    <router-outlet></router-outlet>
+</p>
+<ng-template #elseBlock>
+    <app-table></app-table>
+</ng-template>
+<p [hidden]="showMe"></p>

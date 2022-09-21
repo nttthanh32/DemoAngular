@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { DirectiveComponent } from './directive/directive.component';
+import { TableComponent } from './table/table.component';
+import { TableDetailComponent } from './table-detail/table-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingComponent,
     DirectiveComponent,
+    TableComponent,
+    TableDetailComponent,
   ],
   imports: [
     BrowserModule,

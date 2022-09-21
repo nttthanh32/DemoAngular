@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,9 +14,14 @@ export class BindingComponent implements OnInit {
 
   public successClass = "text-primary";
 
-  constructor() { }
+  constructor(private locate: Location) { }
 
   ngOnInit(): void {
+  }
+
+  // Child Route
+  backHome(): void {
+    this.locate.back();
   }
 
   greetUser() {
@@ -40,4 +46,6 @@ export class BindingComponent implements OnInit {
   clearName() {
     this.name1 = "";
   }
+
+  showMe: boolean | undefined;
 }

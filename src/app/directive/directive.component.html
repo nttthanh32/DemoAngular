@@ -1,46 +1,103 @@
 <!-- Structural Directive -->
 <!-- ngFor Directive -->
+<!-- ngSwitch Directive -->
+<div>
+    <div style="text-align: left;">
+        Choose the period you want to see
+        <select [(ngModel)]="num">
+            <option *ngFor="let morning of morningSchedule;" [value]="morning.period">{{morning.period}}</option>
+            <option *ngFor="let afternoon of afternoonSchedule;" [value]="afternoon.period">{{afternoon.period}}</option>
+        </select>
 
-<div class='panel panel-primary'>
-    <div class='panel-heading'>
-        {{title}}
-    </div>
-
-    <div class='panel-body'>
-        <div class='table-responsive'>
-            <table class='table'>
-                <thead>
-                    <tr>
-                        <th>Period</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let morning of morningSchedule;">
-                        <td>{{morning.period}}</td>
-                        <td>{{morning.startTime}}</td>
-                        <td>{{morning.endTime}}</td>
-                        <td>{{morning.Monday}}</td>
-                        <td>{{morning.Tuesday}}</td>
-                        <td>{{morning.Wednesday}}</td>
-                        <td>{{morning.Thursday}}</td>
-                        <td>{{morning.Friday}}</td>
-                        <td>{{morning.Saturday}}</td>
-                        <td>{{morning.Sunday}}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div [ngSwitch]="num">
+            <p *ngSwitchCase="'1'">One is Selected</p>
+            <p *ngSwitchCase="'2'">Two is Selected</p>
+            <p *ngSwitchCase="'3'">Three is Selected</p>
+            <p *ngSwitchCase="'4'">Four is Selected</p>
+            <p *ngSwitchCase="'5'">Five is Selected</p>
+            <p *ngSwitchCase="'6'">Six is Selected</p>
+            <p *ngSwitchCase="'7'">Seven is Selected</p>
+            <p *ngSwitchCase="'8'">Eight is Selected</p>
+            <p *ngSwitchCase="'9'">Nine is Selected</p>
+            <p *ngSwitchCase="'10'">Ten is Selected</p>
         </div>
     </div>
 </div>
-        </option>
-    </select>
+
+<div style="text-align: right;">
+    <input type="radio" name="morning-afternoon" (change)="ngOnChanges($event)" checked> Morning Schedule
+    <input type="radio" name="morning-afternoon" (change)="ngOnChanges($event)"> Afternoon Schedule
+    <p *ngIf="afternoon; then thenBlock else elseBlock"></p>
+    <ng-template #thenBlock>
+        <div class='panel-body'>
+            <div class='table-responsive'>
+                <table class='table'>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let afternoon of afternoonSchedule;">
+                            <td>{{afternoon.period}}</td>
+                            <td>{{afternoon.startTime}}</td>
+                            <td>{{afternoon.endTime}}</td>
+                            <td>{{afternoon.Monday}}</td>
+                            <td>{{afternoon.Tuesday}}</td>
+                            <td>{{afternoon.Wednesday}}</td>
+                            <td>{{afternoon.Thursday}}</td>
+                            <td>{{afternoon.Friday}}</td>
+                            <td>{{afternoon.Saturday}}</td>
+                            <td>{{afternoon.Sunday}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <div class='panel-body'>
+            <div class='table-responsive'>
+                <table class='table'>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let morning of morningSchedule;">
+                            <td>{{morning.period}}</td>
+                            <td>{{morning.startTime}}</td>
+                            <td>{{morning.endTime}}</td>
+                            <td>{{morning.Monday}}</td>
+                            <td>{{morning.Tuesday}}</td>
+                            <td>{{morning.Wednesday}}</td>
+                            <td>{{morning.Thursday}}</td>
+                            <td>{{morning.Friday}}</td>
+                            <td>{{morning.Saturday}}</td>
+                            <td>{{morning.Sunday}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ng-template>
 </div>

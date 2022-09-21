@@ -34,4 +34,23 @@
         <button [style.color]="getColor()" (click)="clearName()">Clear</button>
     </div>
 
+    <!-- ngIf Direction -->
+    <!-- ngIf then Else -->
+    <div style="text-align: left;">
+        Show More <input type="checkbox" [(ngModel)]="showMe">
+        <p *ngIf="showMe; then thenBlock else elseBlock"></p>
+        <ng-template #thenBlock>
+            <app-directive></app-directive>
+        </ng-template>
+        <ng-template #elseBlock></ng-template>
+        <p [hidden]="showMe"></p>
+    </div>
+</div>
+
+<div>
+    
+    <!-- Child Route -->
+    <div style="text-align: right;">
+        <button (click)="backHome()">Back Home</button>
+    </div>
 </div>
