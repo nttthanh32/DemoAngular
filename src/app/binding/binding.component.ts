@@ -20,7 +20,7 @@ export class BindingComponent implements OnInit {
   }
 
   // Child Route
-  backHome(): void {
+  backForward(): void {
     this.locate.back();
   }
 

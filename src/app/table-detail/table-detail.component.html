@@ -1,1 +1,36 @@
-<p>table-detail works!</p>
+<div class='panel-body'>
+    <div class='table-responsive'>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Period</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [ngStyle]="{'background-color': scheduleId.color}">
+                    <td>{{scheduleId.period}}</td>
+                    <td>{{scheduleId.startTime}}</td>
+                    <td>{{scheduleId.endTime}}</td>
+                    <td>{{scheduleId.Monday}}</td>
+                    <td>{{scheduleId.Tuesday}}</td>
+                    <td>{{scheduleId.Wednesday}}</td>
+                    <td>{{scheduleId.Thursday}}</td>
+                    <td>{{scheduleId.Friday}}</td>
+                    <td>{{scheduleId.Saturday}}</td>
+                    <td>{{scheduleId.Sunday}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

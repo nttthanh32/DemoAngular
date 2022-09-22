@@ -6,9 +6,7 @@
 <!-- ngIf Else & Hidden -->
 Show More <input type="checkbox" [(ngModel)]="showMe" routerLink="./binding">
 <p *ngIf="showMe; else elseBlock">
-    <router-outlet></router-outlet>
 </p>
-<ng-template #elseBlock>
-    <app-table></app-table>
-</ng-template>
+<router-outlet></router-outlet>
+<ng-template #elseBlock></ng-template>
 <p [hidden]="showMe"></p>

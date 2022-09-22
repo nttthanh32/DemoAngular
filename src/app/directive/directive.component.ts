@@ -31,7 +31,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
   
   morningSchedule: MorningSchedule[] = [
     {
-    period: '1',
+    period: 1,
     startTime: '07:00',
     endTime: '07:45',
     Monday: 'Math',
@@ -43,7 +43,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
     Sunday: 'Self-Learning'
     },
     {
-      period: '2',
+      period: 2,
       startTime: '07:45',
       endTime: '08:30',
       Monday: 'Math',
@@ -55,7 +55,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '3',
+      period: 3,
       startTime: '09:00',
       endTime: '09:45',
       Monday: 'Geography',
@@ -67,7 +67,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '4',
+      period: 4,
       startTime: '09:45',
       endTime: '10:30',
       Monday: 'Literature',
@@ -79,7 +79,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '5',
+      period: 5,
       startTime: '10:30',
       endTime: '11:15',
       Monday: 'English',
@@ -94,7 +94,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
 
   afternoonSchedule: AfternoonSchedule[] = [
     {
-    period: '6',
+    period: 6,
     startTime: '13:00',
     endTime: '13:45',
     Monday: 'Self-Learning',
@@ -106,7 +106,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
     Sunday: 'Self-Learning'
     },
     {
-      period: '7',
+      period: 7,
       startTime: '13:45',
       endTime: '14:30',
       Monday: 'English',
@@ -118,7 +118,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '8',
+      period: 8,
       startTime: '15:00',
       endTime: '15:45',
       Monday: 'English',
@@ -130,7 +130,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '9',
+      period: 9,
       startTime: '15:45',
       endTime: '16:30',
       Monday: 'Literature',
@@ -142,7 +142,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
       Sunday: 'Self-Learning'
     },
     {
-      period: '10',
+      period: 10,
       startTime: '16:30',
       endTime: '17:15',
       Monday: 'Chemistry',
@@ -157,7 +157,7 @@ export class DirectiveComponent implements OnInit, OnChanges {
 }
 
 class MorningSchedule {
-  period: string | undefined;
+  period: number | undefined;
   startTime: string | undefined;
   endTime: string | undefined;
   Monday: string | undefined;

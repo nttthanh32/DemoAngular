@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let schedule of schedule;">
+                <tr *ngFor="let schedule of schedules;" [ngStyle]="{'background-color': schedule.color}">
                     <td>{{schedule.period}}</td>
                     <td>{{schedule.startTime}}</td>
                     <td>{{schedule.endTime}}</td>
@@ -28,7 +28,7 @@
                     <td>{{schedule.Friday}}</td>
                     <td>{{schedule.Saturday}}</td>
                     <td>{{schedule.Sunday}}</td>
-                    <td><button>Detail</button></td>
+                    <td><button [routerLink]="['/table-detail',schedule.period]">Detail</button></td>
                 </tr>
             </tbody>
         </table>
