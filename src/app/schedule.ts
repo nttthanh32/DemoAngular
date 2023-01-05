@@ -37,7 +37,7 @@ export const Schedules: Schedule[] = [
     Friday: 'History',
     Saturday: 'Self-Learning',
     Sunday: 'Self-Learning',
-    color: '#2134EF'
+    color: '#2555BA'
   },
   {
     period: 3,
@@ -115,7 +115,7 @@ export const Schedules: Schedule[] = [
     Friday: 'Math',
     Saturday: 'Self-Learning',
     Sunday: 'Self-Learning',
-    color: 'pink'
+    color: '#227372'
   },
   {
     period: 9,
@@ -141,6 +141,6 @@ export const Schedules: Schedule[] = [
     Friday: 'Self-Learning',
     Saturday: 'Self-Learning',
     Sunday: 'Self-Learning',
-    color: 'gray'
+    color: '#FF2358'
   }
 ];
